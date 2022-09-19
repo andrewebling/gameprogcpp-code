@@ -8,6 +8,7 @@
 
 #pragma once
 #include "SDL/SDL.h"
+#include <vector>
 
 // Vector2 struct just stores x/y coordinates
 // (for now)
@@ -15,6 +16,12 @@ struct Vector2
 {
 	float x;
 	float y;
+};
+
+struct Ball
+{
+    Vector2 position;
+    Vector2 velocity;
 };
 
 // Game class
@@ -46,16 +53,12 @@ private:
 	// Pong specific
 	// Direction of left player paddle
 	int mPaddleLeftDir;
-    
 	// Position of paddle
 	Vector2 mPaddleLeftPos;
-	// Position of ball
-	Vector2 mBallPos;
-	// Velocity of ball
-	Vector2 mBallVel;
-    
     
     // Direction of right player paddle
     int mPaddleRightDir;
     Vector2 mPaddleRightPos;
+    
+    std::vector<Ball> mBalls;
 };
